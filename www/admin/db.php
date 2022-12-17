@@ -5,7 +5,7 @@
     $host = 'mysql-server'; // tên mysql server
     $user = 'root';
     $pass = 'root';
-    $db = 'product_management'; // tên databse
+    $db = 'banvemaybay'; // tên databse
 
     $conn = new mysqli($host, $user, $pass, $db);
     $conn->set_charset("utf8");
@@ -15,14 +15,14 @@
 
 	echo "Kết nối thành công tới database<br><br>";
 
-	$sql = "SELECT * from product";
+	$sql = "SELECT * from ve";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) 
 		{
-			echo json_encode($row);
-			echo "<br>";
+			echo "<pre>";
+			print_r($row);
 		}
 	}
 	else {

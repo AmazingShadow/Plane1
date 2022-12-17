@@ -8,6 +8,8 @@
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_orange.css">
 	<link rel="stylesheet" href="/style.css"> <!-- Sử dụng link tuyệt đối tính từ root, vì vậy có dấu / đầu tiên -->
 	<link rel="shortcut icon" type="image/png" href="/images/tabnice1.jpg" />
 	<title>Home Page</title>
@@ -85,13 +87,13 @@
 					</ol>
 					<div class="carousel-inner" role="listbox">
 						<div class="carousel-item active">
-							<img class="d-block img-fluid" src="images/Quangcao.png" alt="First slide" width="100%" height="100%">
+							<img class="d-block img-fluid" src="images/quangcao3.jpg" alt="First slide" width="100%" height="100%">
 						</div>
 						<div class="carousel-item">
-							<img class="d-block img-fluid" src="images/Quangcao.png" alt="Second slide" width="100%" height="100%">
+							<img class="d-block img-fluid" src="images/quangcao2.jpg" alt="Second slide" width="100%" height="100%">
 						</div>
 						<div class="carousel-item">
-							<img class="d-block img-fluid" src="images/Quangcao.png" alt="Third slide" width="100%" height="100%">
+							<img class="d-block img-fluid" src="images/quangcao1.jpg" alt="Third slide" width="100%" height="100%">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -105,8 +107,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mt-3">
-			<div class="offset-2 col-8 offset-2">
+		<div class="row mt-3 d-flex justify-content-between">
+			<div class="col-12">
 				<!-- Row 1 -->
 				<div class="row">
 					<div class="offset-2 col-6">
@@ -114,7 +116,7 @@
 							<div class="input-group-prepend">
 								<input type="checkbox" aria-label="Checkbox for following text input" id="one-way">
 								<label for="one-way" class="p-0 mb-0 ml-2 font-weight-bold">Một chiều</label>
-								<input class="ml-3" type="checkbox" aria-label="Checkbox for following text input" id="round-trip">
+								<input class="ml-3 khuhoi" type="checkbox" aria-label="Checkbox for following text input" id="round-trip">
 								<label for="round-trip" class="p-0 mb-0 ml-2 font-weight-bold">Khứ hồi</label>
 							</div>
 						</div>
@@ -128,64 +130,100 @@
 								<div class="search-content-items row">
 									<div class="search-content-item">
 										<i class="fa-sharp fa-solid fa-plane-departure"></i>
-										<input type="text" placeholder="">
+										<input class="input-search" type="text" placeholder="Bạn đang ở đâu?">
+										<div class="autobox">
+											<li>Hà Nội</li>
+											<li>Hải Phòng</li>
+											<li>Đà Nẵng</li>
+											<li>Nghệ An</li>
+										</div>
 									</div>
 								</div>
 							</div>
 						</section>
 					</div>
-					<div class="offset-2 col-2">
+					<div class="col-2">
 						<section class="search">
 							<div class="wrapper d-flex">
 								<div class="search-content-items row">
 									<div class="search-content-item">
 										<i class="fa-solid fa-plane-arrival"></i>
-										<input type="text" placeholder="">
+										<input class="input-search-where" type="text" placeholder="Bạn muốn đi đâu?">
+										<div class="autobox-where">
+											<li>Hà Nội</li>
+											<li>Hải Phòng</li>
+											<li>Đà Nẵng</li>
+											<li>Nghệ An</li>
+										</div>
 									</div>
 								</div>
 							</div>
 						</section>
 					</div>
-					<div class="offset-2 col-2">
+					<div class="col-2">
 						<section class="search">
 							<div class="wrapper d-flex">
 								<div class="search-content-items row">
 									<div class="search-content-item">
 										<i class="fas fa-user-check"></i>
-										<input class="number-people" type="text" placeholder="">
-										<!-- <div class="number-box">
+										<input class="number-people" type="text" placeholder="Số lượng hành khách">
+										<div class="number-box">
 											<li>
 												<div class="number-left">
 													<p>Người lớn</p>
 												</div>
-												<div class="number-right">
-													<i class="fas fa-minus"></i>
+												<div class="number-right nguoilon">
+													<i class="fas fa-minus nguoilonMinus"></i>
 													<span>0</span>
-													<i class="fas fa-plus"></i>
+													<i class="fas fa-plus nguoilonPlus"></i>
 												</div>
 											</li>
 											<li>
 												<div class="number-left">
 													<p>Trẻ em</p>
 												</div>
-												<div class="number-right">
-													<i class="fas fa-minus"></i>
+												<div class="number-right treem">
+													<i class="fas fa-minus treemMinus"></i>
 													<span>0</span>
-													<i class="fas fa-plus"></i>
+													<i class="fas fa-plus treemPlus"></i>
 												</div>
 											</li>
 											<li>
 												<div class="number-left">
 													<p>Trẻ sơ sinh</p>
 												</div>
-												<div class="number-right">
-													<i class="fas fa-minus"></i>
+												<div class="number-right tresosinh">
+													<i class="fas fa-minus tresosinhMinus"></i>
 													<span>0</span>
-													<i class="fas fa-plus"></i>
+													<i class="fas fa-plus tresosinhPlus"></i>
 												</div>
 											</li>
-											
-										</div> -->
+											<i class="fas fa-times number-close"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-2">
+						<section class="search">
+							<div class="wrapper d-flex">
+								<div class="search-content-items row">
+									<div class="search-content-item">
+										<i class="fa-solid fa-calendar-days"></i>
+										<input id="myID" type="text" placeholder="Ngày đi">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-2 around-ticket">
+						<section class="search">
+							<div class="wrapper d-flex">
+								<div class="search-content-items row">
+									<div class="search-content-item">
+										<i class="fa-solid fa-calendar-days"></i>
+										<input id="myID" type="text" placeholder="Ngày về">
 									</div>
 								</div>
 							</div>
@@ -193,30 +231,42 @@
 					</div>
 				</div>
 				<!-- Row 3 -->
-				<div class="row mt-2 d-flex justify-content-center">
-					<div class="col-2">
+				<div class="row mt-5 d-flex justify-content-center">
+					<!-- <div class="col-2">
 						<section class="search">
 							<div class="wrapper d-flex">
 								<div class="search-content-items row">
 									<div class="search-content-item">
 										<i class="fa-solid fa-calendar-days"></i>
-										<input type="text" placeholder="">
+										<input type="text" placeholder="Ngày đi">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div> -->
+					<div class="col-2 chair">
+						<section class="search">
+							<div class="wrapper d-flex">
+								<div class="search-content-items row">
+									<div class="search-content-item">
+										<i class="fa-solid fa-couch"></i>
+										<input class="input-chair" type="text" placeholder="Hạng ghế">
+										<div class="autobox-chair">
+											<li>Phổ thông</li>
+											<li>Thương gia</li>
+										</div>
 									</div>
 								</div>
 							</div>
 						</section>
 					</div>
-					<div class="offset-6 col-2">
-						<section class="search">
-							<div class="wrapper d-flex">
-								<div class="search-content-items row">
-									<div class="search-content-item">
-										<i class="fa-sharp fa-solid fa-plane-departure"></i>
-										<input type="text" placeholder="">
-									</div>
-								</div>
-							</div>
-						</section>
+				</div>
+				<!-- Row 4 -->
+			</div>
+			<div class="container-fluid">
+				<div class="row mt-3">
+					<div class="offset-8 col-4">
+						<button class="btn btn-primary px-5 py-2 ml-4 mt-3">Tìm kiếm</button>
 					</div>
 				</div>
 			</div>
@@ -238,6 +288,7 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="/main.js"></script> <!-- Sử dụng link tuyệt đối tính từ root, vì vậy có dấu / đầu tiên -->
 </body>
 
