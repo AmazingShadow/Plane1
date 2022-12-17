@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Trang chủ</title>
+</head>
+
+<body id="bodyAdmin">
+    <section class="header">
+        <div class="logo">
+
+            <h2><span>Risa</span></h2>
+            <i class="ri-menu-line icon icon-0 menu"></i>
+        </div>
+        <div class="search--notification--profile">
+            <div class="searchh">
+                <input id="SearchBar" name="SearchBar" type="text" class="form-control" placeholder="Tìm kiếm..."
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button id="buttonSearch"><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+                <div class="picon profile">
+                    <img class="img" src="images/icons8-customer-64.png" alt="">
+
+                </div>
+                <div class="logout-but">
+                    <button class="btn btn-primary" id="logout" style="background-color: white; color: black;">Đăng
+                        xuất</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li class="li">
+                    <a class="a" href="adminCB.html">
+                        <span class="sidebar--item" style="color: black; ">Quản lý chuyến
+                            bay</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminKH.html">
+                        <span class="sidebar--item" style="color: black;">Quản lý khách hàng</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminLS.html" id="active--link">
+                        <span class="sidebar--item" style="color: black;">Quản lý lịch sử mua</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminTK.php">
+                        <span class="sidebar--item" style="color: black;">Thống kê thu nhập</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li class="li">
+                    <a class="a" href="#">
+                        <div class="logout-but">
+                            <button class="btn btn-primary" id="logout"
+                                style="background-color: white; color: black;">Đăng xuất</button>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="recent--patients">
+                <div class="title">
+                    <h2 class="section--title">Chọn khách hàng để xem lịch sử đặt</h2>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MKH</th>
+                                <th>Tên khách hàng</th>
+                                <th>Tên đăng nhập</th>
+                                <th>Mật khẩu</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Giới tính</th>
+                                <th>Ngày sinh</th>
+                                <th>Mã Role</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>KH01</td>
+                                <td>Nguyễn Thái Hoàng</td>
+                                <td>thaihoangcr123</td>
+                                <td>123456</td>
+                                <td>thaihoang@gmail.com</td>
+                                <td>0915137869</td>
+                                <td>Nam</td>
+                                <td>03/08/2002</td>
+                                <td>1</td>
+                                <td><button onclick="openForm()"><u> Chọn</u></button></td>
+                            </tr>
+                            <tr>
+                                <td>KH02</td>
+                                <td>Hoàng Văn Ricon</td>
+                                <td>vanhuycr123</td>
+                                <td>123456</td>
+                                <td>vanhuy@gmail.com</td>
+                                <td>0915137868</td>
+                                <td>Nữ</td>
+                                <td>03/08/2002</td>
+                                <td>1</td>
+                                <td><button onclick="openForm()"><u> Chọn</u></button></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <script>
+        let menu = document.querySelector('.menu')
+        let sidebar = document.querySelector('.sidebar')
+        let mainContent = document.querySelector('.main--content')
+
+        menu.onclick = function () {
+            sidebar.classList.toggle('active')
+            mainContent.classList.toggle('active')
+        }
+
+
+    </script> -->
+    <div class="modal editForm" id="myModal" role="dialog">
+        <form>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" onclick="Close()" id="closeBut" class="btn btn-default"
+                        data-dismiss="modal">Đóng</button>
+                    <div class="modal-header">
+                        <h3 class="modal-title">Lịch sử đặt vé</h3>
+                        <h4>MKH: KH01</h4>
+                        <h4>Nguyễn Thái Hoàng</h4>
+                    </div>
+                    <div class="modal-body" id="body_form">
+                        <div class="table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mã số vé</th>
+                                        <th>Loại vé</th>
+                                        <th>Mã máy bay</th>
+                                        <th>Mã chuyến bay</th>
+                                        <th>Chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                    <tr>
+                                        <td>VE06</td>
+                                        <td>Phổ thông</td>
+                                        <td>MB02</td>
+                                        <td>CB02</td>
+                                        <td><button onclick="openDetail()"><u>Chi tiết</u></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>VE07</td>
+                                        <td>Phổ thông</td>
+                                        <td>MB02</td>
+                                        <td>CB02</td>
+                                        <td><button onclick="openDetail()"><u>Chi tiết</u></button></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Thêm">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal viewForm" id="modalDetail" role="dialog">
+        <form>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Chi tiết thông tin vé</h4>
+                        <h5 style="text-align: center;">MSV: VE06</h5>
+                    </div>
+                    <div class="modal-body" id="body_form">
+                        <div class="div_left" style="text-align: left; padding-left: 15px; ">
+                            <h5>Mã số vé: VE06</h5><br>
+                            <h5>Giá vé: 30,000 VNĐ</h5><br>
+                            <h5>Mã máy bay: MB02</h5><br>
+                            <h5>Mã người mua: KH01</h5>
+                        </div>
+                        <div class="div_right">
+                            <h5>Số ghế: A01</h5><br>
+                            <h5>Loại vé: Phổ thông</h5><br>
+                            <h5>Mã hành khách: KH06</h5><br>
+                            <h5>Mã chuyến bay: CB02</h5>
+                            <button type="button" onclick="CloseDetail()"
+                                style="background-color: #5EC2E4; color: white; margin-left: 100px; padding: 5px;">Print</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="CloseDetail()" class="btn btn-default"
+                            data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <script>
+        function openDetail() {
+            let div = document.querySelector('#modalDetail');
+            div.style.display = "block";
+        }
+
+        function CloseDetail() {
+            let div = document.querySelector('#modalDetail');
+            div.style.display = "none";
+        }
+
+        function Close() {
+            let div = document.querySelector('#myModal');
+            div.style.display = "none";
+        }
+
+        function openForm() {
+            let div = document.querySelector('#myModal');
+            div.style.display = "block";
+        }
+    </script> -->
+    <script src="/main.js"></script>
+</body>
+
+</html>

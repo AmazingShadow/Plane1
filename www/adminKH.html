@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Trang chủ</title>
+</head>
+
+<body id="bodyAdmin">
+    <section class="header">
+        <div class="logo">
+
+            <h2><span>Risa</span></h2>
+            <i class="ri-menu-line icon icon-0 menu"></i>
+        </div>
+        <div class="search--notification--profile">
+            <div class="searchh">
+                <input id="SearchBar" name="SearchBar" type="text" class="form-control" placeholder="Tìm kiếm..."
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button id="buttonSearch"><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+                <div class="picon profile">
+                    <img class="img" src="images/icons8-customer-64.png" alt="">
+
+                </div>
+                <div class="logout-but">
+                    <button class="btn btn-primary" id="logout" style="background-color: white; color: black;">Đăng
+                        xuất</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li class="li">
+                    <a class="a" href="adminCB.html">
+                        <span class="sidebar--item" style="color: black; ">Quản lý chuyến
+                            bay</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminKH.html" id="active--link">
+                        <span class="sidebar--item" style="color: black;">Quản lý khách hàng</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminLS.html">
+                        <span class="sidebar--item" style="color: black;">Quản lý lịch sử mua</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminTK.php">
+                        <span class="sidebar--item" style="color: black;">Thống kê thu nhập</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li class="li">
+                    <a class="a" href="#">
+                        <div class="logout-but">
+                            <button class="btn btn-primary" id="logout"
+                                style="background-color: white; color: black;">Đăng xuất</button>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="recent--patients">
+                <div class="title">
+                    <h2 class="section--title"></h2>
+                    <button class="add" onclick="openForm()"><i class="ri-add-line"></i>Thêm khách hàng</button>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MKH</th>
+                                <th>Tên khách hàng</th>
+                                <th>Tên đăng nhập</th>
+                                <th>Mật khẩu</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Giới tính</th>
+                                <th>Ngày sinh</th>
+                                <th>Mã Role</th>
+                                <th>Chỉnh sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>KH01</td>
+                                <td>Nguyễn Thái Hoàng</td>
+                                <td>thaihoangcr123</td>
+                                <td>123456</td>
+                                <td>thaihoang@gmail.com</td>
+                                <td>0915137869</td>
+                                <td>Nam</td>
+                                <td>03/08/2002</td>
+                                <td>1</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                            <tr>
+                                <td>KH02</td>
+                                <td>Hoàng Văn Ricon</td>
+                                <td>vanhuycr123</td>
+                                <td>123456</td>
+                                <td>vanhuy@gmail.com</td>
+                                <td>0915137868</td>
+                                <td>Nữ</td>
+                                <td>03/08/2002</td>
+                                <td>1</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <script>
+        let menu = document.querySelector('.menu')
+        let sidebar = document.querySelector('.sidebar')
+        let mainContent = document.querySelector('.main--content')
+
+        menu.onclick = function () {
+            sidebar.classList.toggle('active')
+            mainContent.classList.toggle('active')
+        }
+
+
+    </script> -->
+    <div class="modal editForm" id="myModal" role="dialog">
+        <form>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Nhập thông tin khách hàng</h4>
+                    </div>
+                    <div class="modal-body" id="body_form">
+                        <div class="div_left" style="text-align: left; padding-left: 15px; ">
+                            <label for="">Mã khách hàng</label>
+                            <br>
+                            <input type="text" placeholder="Nhập mã khách hàng..."><br><br>
+
+                            <label for="">Tên khách hàng</label>
+                            <br>
+                            <input type="text" placeholder="Nhập tên khách hàng..."><br><br>
+
+                            <label for="">Tài khoản</label>
+                            <br>
+                            <input type="text" placeholder="Nhập tài khoản..."><br><br>
+
+                            <label for="">Mật khẩu</label>
+                            <br>
+                            <input type="password" placeholder="Nhập mã khách hàng..."><br><br>
+                        </div>
+                        <div class="div_right">
+                            <label for="">Email</label>
+                            <br>
+                            <input type="email" placeholder="Nhập email khách hàng..."><br><br>
+
+                            <label for="">Số điện thoại</label>
+                            <br>
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required
+                                placeholder="Nhập sđt khách hàng..."><br><br>
+
+                            <label for="gender">Giới tính</label><br>
+                            <select id="gender" name="gender" New>
+                                <option value="Nữ">Nam</option>
+                                <option value="Nam">Nữ</option>
+                            </select><br><br>
+
+                            <label for="">Ngày sinh</label>
+                            <br>
+                            <input type="date" ><br><br>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="Close()" class="btn btn-default"
+                            data-dismiss="modal">Đóng</button>
+                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Thêm">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <script>
+        function Close() {
+            const div = document.querySelector('#myModal');
+            div.style.display = "none";
+        }
+        function openForm() {
+            const div = document.querySelector('#myModal');
+            div.style.display = "block";
+        }
+    </script> -->
+    <script src="/main.js"></script>
+</body>
+
+</html>

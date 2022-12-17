@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Trang chủ</title>
+</head>
+
+<body id="bodyAdmin">
+    <section class="header">
+        <div class="logo">
+
+            <h2><span>Risa</span></h2>
+            <i class="ri-menu-line icon icon-0 menu"></i>
+        </div>
+        <div class="search--notification--profile">
+            <div class="searchh">
+                <input id="SearchBar" name="SearchBar" type="text" class="form-control" placeholder="Tìm kiếm..."
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button id="buttonSearch"><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+                <div class="picon profile">
+                    <img class="img" src="images/icons8-customer-64.png" alt="">
+
+                </div>
+                <div class="logout-but">
+                    <button class="btn btn-primary" id="logout" style="background-color: white; color: black;">Đăng
+                        xuất</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li class="li">
+                    <a class="a" href="adminCB.html" id="active--link">
+                        <span class="sidebar--item" style="color: black; ">Quản lý chuyến
+                            bay</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminKH.html">
+                        <span class="sidebar--item" style="color: black;">Quản lý khách hàng</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminLS.html">
+                        <span class="sidebar--item" style="color: black;">Quản lý lịch sử mua</span>
+                    </a>
+                </li>
+                <li class="li">
+                    <a class="a" href="adminTK.php">
+                        <span class="sidebar--item" style="color: black;">Thống kê thu nhập</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li class="li">
+                    <a class="a" href="#">
+                        <div class="logout-but">
+                            <button class="btn btn-primary" id="logout"
+                                style="background-color: white; color: black;">Đăng xuất</button>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="recent--patients">
+                <div class="title">
+                    <h2 class="section--title"></h2>
+                    <button class="add" onclick="openForm()"><i class="ri-add-line"></i>Thêm chuyến bay</button>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MCB</th>
+                                <th>Ngày bay</th>
+                                <th>Hạng chuyến bay</th>
+                                <th>Nơi đi</th>
+                                <th>Nơi đến</th>
+                                <th>Giờ khởi hành</th>
+                                <th>Giờ hạ cánh</th>
+                                <th>Quãng đường</th>
+                                <th>Giá tiền</th>
+                                <th>Chỉnh sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>CB01</td>
+                                <td>08/06/2022</td>
+                                <td>Phổ thông</td>
+                                <td>Hà Nội</td>
+                                <td>Đà nẵng</td>
+                                <td>08/06/2022 13:23</td>
+                                <td>08/06/2022 15:23</td>
+                                <td>300.5</td>
+                                <td>1,600,000</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                            <tr>
+                                <td>CB02</td>
+                                <td>08/06/2022</td>
+                                <td>Phổ thông</td>
+                                <td>Hà Nội</td>
+                                <td>Đà nẵng</td>
+                                <td>08/06/2022 13:23</td>
+                                <td>08/06/2022 15:23</td>
+                                <td>300.5</td>
+                                <td>1,700,000</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                            <tr>
+                                <td>CB03</td>
+                                <td>08/06/2022</td>
+                                <td>Phổ thông</td>
+                                <td>Hà Nội</td>
+                                <td>Đà nẵng</td>
+                                <td>08/06/2022 13:23</td>
+                                <td>08/06/2022 15:23</td>
+                                <td>300.5</td>
+                                <td>1,500,000</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                            <tr>
+                                <td>CB04</td>
+                                <td>08/06/2022</td>
+                                <td>Phổ thông</td>
+                                <td>Cam Ranh</td>
+                                <td>Đà nẵng</td>
+                                <td>08/06/2022 13:23</td>
+                                <td>08/06/2022 15:23</td>
+                                <td>230</td>
+                                <td>800,000</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                            <tr>
+                                <td>CB05</td>
+                                <td>08/06/2022</td>
+                                <td>Phổ thông</td>
+                                <td>Cam Ranh</td>
+                                <td>Đà nẵng</td>
+                                <td>08/06/2022 13:23</td>
+                                <td>08/06/2022 15:23</td>
+                                <td>230</td>
+                                <td>9,600,000</td>
+                                <td><button onclick="openForm()" class="ri-edit-line edit"></button></td>
+                                <td><button class="ri-delete-bin-line delete"></button></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <script>
+        let menu = document.querySelector('.menu')
+        let sidebar = document.querySelector('.sidebar')
+        let mainContent = document.querySelector('.main--content')
+
+        menu.onclick = function () {
+            sidebar.classList.toggle('active')
+            mainContent.classList.toggle('active')
+        }
+
+        // document.getElementById('noiDi').addEventListener('click', function () {{
+        //     // document.querySelector('.dropdown-menu').style.display = "block";
+        //     alert('hello');
+        // }});
+        function openPlace() {
+            document.querySelector('.dropdown-menu').style.display = "block";
+        }
+    </script> -->
+    <div class="modal editForm" id="myModal" role="dialog">
+        <form>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Nhập thông tin chuyến bay</h4>
+                    </div>
+                    <div class="modal-body" id="body_form">
+                        <div class="div_left" style="text-align: left; padding-left: 15px;">
+                            <label for="ngayB">Ngày bay</label>
+                            <br>
+                            <input type="date" id="ngayB" name="ngayB"><br><br>
+
+                            <label for="hangCB">Chọn hạng chuyến bay</label><br>
+                            <select id="hangCB" name="hangCB" New>
+                                <option value="Phổ thông">Phổ thông</option>
+                                <option value="Thương gia">Thương gia</option>
+                            </select><br><br>
+
+                            <label for="">Nơi đi</label>
+                            <br>
+                            <!-- <button onclick="openPlace()"><input placeholder="Origin" aria-invalid="false" autocapitalize="sentences" data-toggle="dropdown"
+                                autocomplete="on" autocorrect="on" dir="auto" spellcheck="true" type="text"
+                                class="css-11aywtz r-13awgt0 r-1sixt3s r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
+                                data-testid="airport-input-departure" value="TP HCM (SGN)"
+                                style="color: rgb(3, 18, 26);"></button> -->
+                            <button onclick="openPlace()" type="button" data-toggle="dropdown">TP HCM (SGN)
+                                <span class="caret"></span></button>
+                            <div class="dropdown-menu" data-testid="airport-autocomplete-dropdown-departure">
+                                <div
+                                    class="css-1dbjc4n r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-1sncvnh">
+                                    <div class="css-1dbjc4n">
+                                        <div class="css-1dbjc4n r-gtdqiz r-ipm5af r-mhe3cw">
+                                            <div class="css-1dbjc4n">
+                                                <div class="css-1dbjc4n r-1ihkh82 r-qklmqi r-ymttw5 r-5njf8e"
+                                                    style="border-bottom-color: rgb(242, 243, 243);">
+                                                    <div dir="auto" class="r-b88u0q " style="color: rgb(3, 18, 26);">
+                                                        Thành phố hoặc sân bay phổ biến
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="TP HCM, Việt Nam" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-391gc0 r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class=" r-b88u0q " style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">TP HCM, Việt
+                                                                Nam</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">SGN - Sân bay Tân Sơn Nhất</span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Tokyo, Nhật Bản" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="border-bottom-color: rgb(242, 243, 243); transition-duration: 0s; background-color: rgb(255, 255, 255);">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q " style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Tokyo, Nhật
+                                                                Bản</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">TYOA - Tất cả sân bay ờ Tokyo</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Đà Nẵng, Việt Nam" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="border-bottom-color: rgb(242, 243, 243); transition-duration: 0s; background-color: rgb(255, 255, 255);">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Đà Nẵng,
+                                                                Việt
+                                                                Nam</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">DAD - Sân bay Đà Nẵng</span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Hà Nội, Việt Nam" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="border-bottom-color: rgb(242, 243, 243); transition-duration: 0s; background-color: rgb(255, 255, 255);">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Hà Nội, Việt
+                                                                Nam</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">HAN - Sân bay Nội Bài</span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Đà Lạt, Việt Nam" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Đà Lạt, Việt
+                                                                Nam</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">DLI - Sân bay Liên Khương</span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Singapore, Singapore" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Singapore,
+                                                                Singapore</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">SINA - Tất cả sân bay ờ Singapore</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Jakarta, Indonesia" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-391gc0 r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Jakarta,
+                                                                Indonesia</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">JKTA - Tất cả sân bay ờ Jakarta</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Istanbul, Thổ Nhĩ Kỳ" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Istanbul,
+                                                                Thổ Nhĩ Kỳ</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">ISTA - Tất cả sân bay ờ Istanbul</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Sydney, Úc" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Sydney,
+                                                                Úc</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">SYD - Sân bay quốc tế Sydney</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Bangkok, Thái Lan" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class=" r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Bangkok,
+                                                                Thái
+                                                                Lan</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">BKKA - Tất cả sân bay ờ Bangkok</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n">
+                                            <div data-cell-content="Manila, Philippines" tabindex="0"
+                                                class="css-1dbjc4n r-1habvwh r-qklmqi r-1loqt21 r-18u37iz r-1w6e6rj r-1wtj0ep r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(242, 243, 243); transition-duration: 0s;">
+                                                <div class="css-1dbjc4n r-13awgt0">
+                                                    <div dir="auto" class="r-b88u0q" style="color: rgb(3, 18, 26);">
+                                                        <span><span class="">Manila,
+                                                                Philippines</span></span>
+                                                    </div>
+                                                    <div dir="auto"
+                                                        class="css-901oao r-1sixt3s r-1enofrn r-majxgm r-1cwl3u0 r-fdjqy7"
+                                                        style="color: rgb(104, 113, 118); margin-top: 4px;"><span><span
+                                                                class="">MNL - Sân bay quốc tế Ninoy
+                                                                Aquino</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-1dbjc4n"></div>
+                                    </div>
+                                </div>
+                            </div><br><br>
+                            <label for="">Nơi đến</label>
+                            <br>
+                            <button onclick="openPlace()" type="button" data-toggle="dropdown">TP HCM (SGN)
+                                <span class="caret"></span></button>
+
+
+                        </div>
+                        <div class="div_right">
+                            <label for="">Giời khởi hành</label>
+                            <br>
+                            <input type="date"> <input type="time"><br><br>
+                            <label for="">Giời hạ cánh</label>
+                            <br>
+                            <input type="date"> <input type="time"><br><br>
+                            <label for="">Quãng đường</label><br>
+                            <input type="text" placeholder="Nhập số kilometters..."><br><br>
+                            <label for="">Giá vé:</label>
+                            <h5>000.000 VNĐ</h2>
+
+    
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="Close()" class="btn btn-default"
+                            data-dismiss="modal">Đóng</button>
+                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Thêm">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <script>
+        function Close() {
+            const div = document.querySelector('#myModal');
+            div.style.display = "none";
+        }
+        function openForm() {
+            const div = document.querySelector('#myModal');
+            div.style.display = "block";
+        }
+    </script> -->
+    <script src="/main.js"></script>
+</body>
+
+</html>
