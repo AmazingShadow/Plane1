@@ -427,3 +427,19 @@ function checkChair() {
 }
 
 checkChair();
+
+// Xử lý loại vé
+function checkTicket() {
+	let oneway = document.querySelector('.oneway');
+	let ngayve = document.querySelector('.around-ticket');
+
+	oneway.addEventListener("click", function() {
+		if (this.checked) {
+			ngayve.style.display = "none";
+		}
+	})
+}
+
+checkTicket();
+
+// Trang lịch sử đặt vé

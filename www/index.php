@@ -114,9 +114,9 @@
 					<div class="offset-2 col-6">
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-								<input type="checkbox" aria-label="Checkbox for following text input" id="one-way">
+								<input name="loaive" class="oneway" type="radio" aria-label="Checkbox for following text input" id="one-way">
 								<label for="one-way" class="p-0 mb-0 ml-2 font-weight-bold">Một chiều</label>
-								<input class="ml-3 khuhoi" type="checkbox" aria-label="Checkbox for following text input" id="round-trip">
+								<input name="loaive" class="ml-3 khuhoi" type="radio" aria-label="Checkbox for following text input" id="round-trip">
 								<label for="round-trip" class="p-0 mb-0 ml-2 font-weight-bold">Khứ hồi</label>
 							</div>
 						</div>
@@ -282,6 +282,7 @@
 				Asperiores mollitia dolore et nulla ratione velit repellendus maxime praesentium excepturi saepe sit, exercitationem odio dolores tempora quasi alias porro doloribus, sunt eligendi? Soluta similique dolores commodi voluptates sit nesciunt.
 				Ullam, at sint temporibus omnis ab quas repudiandae a possimus sed aspernatur amet rerum fugiat nisi odit necessitatibus nesciunt. Assumenda quo quos quia dolores laborum animi nemo tempora, rerum quod.
 				Fuga voluptatum aliquam rem praesentium neque placeat cupiditate dignissimos architecto rerum deserunt qui, repudiandae distinctio quod animi. Eligendi enim et cumque facilis pariatur expedita sapiente! Possimus quisquam obcaecati amet voluptatibus.
+				Hello
 			</div>
 		</div>
 	</div>

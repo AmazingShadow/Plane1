@@ -822,3 +822,365 @@ span.flatpickr-weekday {
 .autobox-chair.active li {
     display: block;
 }
+
+/* Trang đặt vé */
+.css-4rbku5 {
+    background-color: rgba(0, 0, 0, 0.00);
+    color: inherit;
+    font: inherit;
+    list-style: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    text-align: inherit;
+    text-decoration: none;
+}
+
+
+
+.css-1dbjc4n {
+    -ms-flex-align: stretch;
+    -ms-flex-direction: column;
+    -ms-flex-negative: 0;
+    -ms-flex-preferred-size: auto;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-basis: auto;
+    -webkit-flex-direction: column;
+    -webkit-flex-shrink: 0;
+    align-items: stretch;
+    border: 0 solid black;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    position: relative;
+    z-index: 0;
+}
+
+.css-901oao {
+    border: 0 solid black;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 1.00);
+    display: inline;
+    font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+.r-sdzlij {
+    border-bottom-left-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+}
+
+
+.r-1awozwy {
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
+
+.r-1777fci {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.r-q4epte {
+    background-color: rgba(104, 113, 118, 1.00);
+}
+
+.r-10ptun7 {
+    height: 16px;
+}
+
+.r-1kb76zh {
+    margin-right: 8px;
+}
+
+.r-b88u0q {
+    font-weight: 700;
+}
+
+.r-1janqcz {
+    width: 16px;
+}
+
+.r-vrz42v {
+    line-height: 28px;
+}
+
+.r-1sixt3s {
+    font-family: MuseoSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.r-1x35g6 {
+    font-size: 24px;
+}
+
+.r-1enofrn {
+    font-size: 12px;
+}
+
+.r-majxgm {
+    font-weight: 500;
+}
+
+.r-1cwl3u0 {
+    line-height: 16px;
+}
+
+.r-fdjqy7 {
+    text-align: left;
+}
+
+
+
+.r-ubezar {
+    font-size: 16px;
+}
+
+.r-135wba7 {
+    line-height: 24px;
+}
+
+.r-jwli3a {
+    color: rgba(255, 255, 255, 1.00);
+}
+
+
+.leftbody {
+    stroke: #B0A9A9;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: 8px solid #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    background: #fff;
+
+}
+
+.profile-content input {
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.profile-content label {
+    font-weight: 700;
+}
+
+/* Trang lịch sử đặt vé */
+.column {
+    float: left;
+    width: 20%;
+    padding: 20px;
+    height: 500px;
+    background-color: white;
+}
+
+.column h4 {
+    text-align: center;
+    color: #5EC2E4;
+}
+
+.column p {
+    padding: 10px;
+}
+
+.column2 {
+    float: left;
+    width: 80%;
+    padding: 20px;
+
+    min-height: 700px;
+    border: 2px solid #5EC2E4;
+
+}
+
+#lichsudatve {
+    background-color: #edf3f6;
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.imgg {
+    width: 120;
+    height: 120;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-item1:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Trang thông tin cá nhân */
+#thongtincanhan {
+    background: #F1F3FA;
+}
+
+.profile1 {
+    margin: 20px 0;
+}
+
+.profile-sidebar {
+    padding: 20px 0 10px 0;
+    background: #fff;
+}
+
+.profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+
+}
+
+.profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-usertitle-name {
+    color: #5a7391;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+
+.profile-usertitle-job {
+    text-transform: uppercase;
+    color: #5b9bd1;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+.profile-userbuttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.profile-userbuttons .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-right: 5px;
+}
+
+
+.profile-userbuttons .btn:last-child {
+    margin-right: 0px;
+}
+
+.profile-usermenu {
+    margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+    border-bottom: 1px solid #f0f4f7;
+}
+
+
+.profile-usermenu ul li:last-child {
+    border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+    color: #93a3b5;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.profile-usermenu ul li a i {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+    background-color: #fafcfd;
+    color: #5b9bd1;
+}
+
+
+.profile-usermenu ul li.active {
+    border-bottom: none;
+}
+
+
+.profile-usermenu ul li.active a {
+    color: #5b9bd1;
+    background-color: #f6f9fb;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -2px;
+}
+
+
+.menu-icon {
+    color: #5EC2E4;
+    padding-left: 15px;
+}
+
+.profile-content-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f1f1f1;
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
+}

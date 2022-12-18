@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử đặt vé</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+
+</head>
+
+<body id="lichsudatve">
+    <div class="container">
+        <a class="navbar-brand" style="padding-left: 0;" href="trangchu.html"><img class="imgg" importance="low"
+                loading="lazy" src="images/Risanavi.png" decoding="async" width="108"
+                style="object-fit:fill;object-position:50% 50%"></a>
+        <h1 class="text-center" style="color: #5EC2E4;">Lịch sử đặt vé</h1>
+        <div class="row row1">
+            <div class="column">
+                <h4>Thông tin khách hàng</h4>
+                <p>Mã khách hàng: KH01</p>
+                <p>Tên: Trịnh Trường Duy</p>
+                <p>Số điện thoại: 0344511607</p>
+                <p style="color: red;">Số đơn đã mua: 7</p>
+            </div>
+            <div class="column2">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE06</b><br>
+                            SGN - UIH
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE07</b><br>
+                            UIH - SGN
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE08</b><br>
+                            HNU - SGN
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE09</b><br>
+                            SGN - HNU
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE10</b><br>
+                            SGN - HNU
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE11</b><br>
+                            SGN - HNU
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card-item card-item1">
+                        <img class="imgg" src="images/icons8-plane-ticket-96.png" alt="">
+                        <p style="color: black; background-color: white; padding: 10px">
+                            <b>VE12</b><br>
+                            SGN - HNU
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(".card-item1").click(function () {
+                    openFormm();
+                });
+            });
+            function openFormm() {
+                document.getElementById("modalDetail1").style.display = "block";
+            }
+            function CloseDetaill() {
+                const div = document.querySelector('#modalDetail1');
+                div.style.display = "none";
+            }
+
+        </script>
+        <div class="modal viewForm" id="modalDetail1" role="dialog">
+            <form>
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">Chi tiết thông tin vé</h4>
+                            <h5 style="text-align: center;">MSV: VE06</h5>
+                        </div>
+                        <div class="modal-body" id="body_form">
+                            <div class="div_left" style="text-align: left; padding-left: 15px; ">
+                                <h5>Mã số vé: VE06</h5><br>
+                                <h5>Giá vé: 30,000 VNĐ</h5><br>
+                                <h5>Mã máy bay: MB02</h5><br>
+                                <h5>Mã người mua: KH01</h5>
+                            </div>
+                            <div class="div_right">
+                                <h5>Số ghế: A01</h5><br>
+                                <h5>Loại vé: Phổ thông</h5><br>
+                                <h5>Mã hành khách: HK06</h5><br>
+                                <h5>Mã chuyến bay: CB02</h5>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick="CloseDetaill()" class="btn btn-default"
+                                data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <script src="/main.js"></script> -->
+
+</body>
+
+</html>
